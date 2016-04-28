@@ -3,4 +3,4 @@ from lib.data.FetchDetails import *
 from lib.data.BuildNetworkImage import *
 
 def network_learning():
-	print("<!------------------------------------------Building Up Network------------------------------------------!>");
+	pass
