@@ -1,32 +1,29 @@
-from lib.DataStructures import *
-from lib.NetworkLearning import *
-from lib.PathComputation import *
-"""
-import threading
-import time
-class NetworkLearningThread (threading.Thread):
-	def __init__(self):
-		threading.Thread.__init__(self)
-	def run(self):
-		print("Building Network")
-		network_learning()
+import lib.DataStructures
+import lib.PathComputation
+import lib.FetchNetwork
+import lib.test.BuildNetworkDemo 
 
+#graph_nodes=lib.FetchNetwork.init()
+#graph_nodes=lib.test.BuildNetworkDemo.initDemoTwo();
+#lib.DataStructures.display_network(graph_nodes)
+#print str(lib.DataStructures.no_of_nodes)+"================================================================================================="
+#print lib.DataStructures.no_of_nodes
+#print graph_nodes[4].get_parent_list()
+#source="127.0.0.13"
+#destination="127.0.0.1"
 
-class PathComputationThread (threading.Thread):
-    def __init__(self):
-		threading.Thread.__init__(self)
-    def run(self):
-		print("ComputingPath")
-		path_computation();
+source="0200:0000:0000:000a"
+destination="0200:0000:0000:0001"
 
-network_learning_thread=NetworkLearningThread()
-path_computation_thread=PathComputationThread()
-
-network_learning_thread.start()
-path_computation_thread.start()
-
-"""
+graph_nodes=lib.FetchNetwork.init()
+#lib.DataStructures.display_network(graph_nodes)
+graph_nodes=lib.DataStructures.format_parents(graph_nodes)
+graph_nodes=lib.DataStructures.convert_neighbor_to_parent(graph_nodes)
+lib.DataStructures.display_network(graph_nodes)
+#lib.DataStructures.display_network(graph_nodes)
+#print lib.DataStructures.no_of_nodes
+paths=lib.PathComputation.init(source,destination,graph_nodes)
 
 
 
-network_learning()
+
