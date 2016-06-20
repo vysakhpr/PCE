@@ -5,7 +5,7 @@ no_of_channels=16
 server_ip_address="127.0.0.1"
 server_port=5683
 no_of_nodes=0
-packet_rate_max_threshold=200
+packet_rate_max_threshold=10
 
 class Nodes(object):
 	"""The Motes or Entities in the Underlying RPL Network---Store the nodes according to rank"""

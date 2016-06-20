@@ -28,7 +28,7 @@ def init():
 		contents=buff.split(";")
 		node=lib.DataStructures.Nodes(int(contents[1]))
 		node.set_ip_address(contents[0])
-		node.set_packet_rate(int(contents[2]))
+		node.set_packet_rate(float(contents[2]))
 		for ip in contents[3:]:
 			if ip.strip()!= "":
 				node.add_parent(ip.strip(),0,0)
