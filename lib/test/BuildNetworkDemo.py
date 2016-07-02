@@ -16,7 +16,7 @@ def initDemoOne():
 	node_list[2].add_parent("127.0.0.1",-65,0)
 	node_list[3].add_parent("127.0.0.1",-60,0)
 
-	node_list[0].set_packet_rate(2)
+	node_list[0].set_packet_rate(0)
 	node_list[1].set_packet_rate(4)
 	node_list[2].set_packet_rate(7)
 	node_list[3].set_packet_rate(3)

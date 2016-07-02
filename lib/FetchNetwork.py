@@ -18,7 +18,7 @@ def init():
 	lib.DataStructures.no_of_nodes=0
 	node=lib.DataStructures.Nodes(1)
 	node.set_ip_address("0200:0000:0000:0001")
-	node.set_packet_rate(10);
+	node.set_packet_rate(0);
 	graph_nodes.append(node)
 	lib.DataStructures.no_of_nodes=lib.DataStructures.no_of_nodes+1
 	for i in range(int(length)):

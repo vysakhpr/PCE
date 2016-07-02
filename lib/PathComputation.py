@@ -10,6 +10,7 @@ no_of_paths=0
 
 def init(source_ip, sink_ip,graph_nodes):
 	print("<!--------------------------------------------Computing Paths--------------------------------------------!>");
+	path={}
 	source=graph_nodes[lib.DataStructures.find_node(graph_nodes,source_ip)]
 	sink=graph_nodes[lib.DataStructures.find_node(graph_nodes,sink_ip)]
 	find_paths(source,sink,graph_nodes)
@@ -48,8 +49,9 @@ def init(source_ip, sink_ip,graph_nodes):
 			print("No alternate routes available......")
 			print("Choosing RPL parent as the next hop...")
 		print("\t"+graph_nodes[current_index].get_ip_address()+"\twill choose "+graph_nodes[next_index].get_ip_address()+"\tas the next hop for all its packets-----Packet Rate:"+str(graph_nodes[current_index].get_packet_rate()))
+		path[graph_nodes[current_index].get_ip_address()]=graph_nodes[next_index].get_ip_address()
 		current_index=next_index
-
+	return path,cost_matrix
 
 def find_optimal_route(source_ip,destination_ip,graph_nodes):
 	cost_matrix=[[lib.DataStructures.CostMatrixCell() for i in range(len(graph_nodes))] for j in range(len(graph_nodes))]
